@@ -40,10 +40,7 @@ export function Hero() {
             <Sparkles className="size-3.5 text-accent" aria-hidden="true" />
             Curated by Travel Professionals
           </span>
-          <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur-md">
-            <Star className="size-3.5 fill-accent text-accent" aria-hidden="true" />
-            4.9 / 5 from happy travellers
-          </span>
+      
         </div>
 
         {/* Headline */}
