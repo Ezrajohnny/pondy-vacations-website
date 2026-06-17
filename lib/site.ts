@@ -1,6 +1,6 @@
 export const CONTACT = {
-  phone: "+91 99449 55837",
-  phoneHref: "tel:+919944955837",
+  phone: "+91 86675 65608",
+  phoneHref: "tel:+918667565608",
   email: "vacationspondy@gmail.com",
   instagram: "@pondy_vacations",
   instagramHref: "https://instagram.com/pondy_vacations",
@@ -8,7 +8,7 @@ export const CONTACT = {
 
 // WhatsApp deep link (number without + or spaces)
 export const WHATSAPP_HREF =
-  "https://wa.me/919944955837?text=Hi%20Pondy%20Vacations%2C%20I'd%20like%20to%20plan%20a%20trip%20to%20Pondicherry."
+  "https://wa.me/918667565608?text=Hi%20Pondy%20Vacations%2C%20I'd%20like%20to%20plan%20a%20trip%20to%20Pondicherry."
 
 export const NAV_LINKS = [
   { label: "Services", href: "#services" },
