@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { Send, CheckCircle2 } from "lucide-react"
 import { WhatsAppButton } from "@/components/cta-buttons"
+import { supabase } from "@/lib/supabase"
 
 const services = [
   "Couple Rooms",
@@ -20,10 +21,33 @@ const services = [
 export function EnquiryForm() {
   const [submitted, setSubmitted] = useState(false)
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setSubmitted(true)
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault()
+
+  const formData = new FormData(e.currentTarget)
+
+  const { error } = await supabase
+    .from("enquiries")
+    .insert([
+      {
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        services: formData.get("service"),
+        travel_dates: formData.get("dates"),
+        message: formData.get("message"),
+        status: "new"
+      }
+    ])
+
+  if (error) {
+    alert("Failed to submit enquiry")
+    console.error(error)
+    return
   }
+
+  setSubmitted(true)
+  e.currentTarget.reset()
+}
 
   return (
     <section id="enquiry" className="bg-ocean-deep py-16 sm:py-24">
